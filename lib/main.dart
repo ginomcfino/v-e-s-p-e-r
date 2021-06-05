@@ -22,12 +22,13 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final wordPair = WordPair.random();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Welcome to Flutter'),
+        title: Text(WordPair.random().asPascalCase),
       ),
       body: Center(
-        child: Text('A truly great app is born'),
+        child: Text(wordPair.asPascalCase),
       ),
     );
   }
