@@ -22,14 +22,12 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
+    var word = RandomWords();
     return Scaffold(
       appBar: AppBar(
-        title: Text(WordPair.random().asPascalCase),
+        title: word,
       ),
-      body: Center(
-        child: Text(wordPair.asPascalCase),
-      ),
+      body: Center(child: RandomWords()),
     );
   }
 }
@@ -40,9 +38,35 @@ class RandomWords extends StatefulWidget {
 }
 
 class _RandomWordsState extends State<RandomWords> {
-  @override
+  final _suggesstions = <WordPair>[];
+  final _biggerFont = TextStyle(fontSize: 18.0);
+
   Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
-    return Text(wordPair.asPascalCase);
+    return Scaffold(
+      appBar: AppBar(title: Text("VESPER")),
+      body: _buildSuggestions(),
+    );
+  }
+
+  Widget _buildSuggestions() {
+    return ListView.builder(
+        padding: EdgeInsets.all(16.0),
+        itemBuilder: (context, i) {
+          if (i.isOdd) return Divider();
+          final index = i ~/ 2;
+          if (index >= _suggesstions.length) {
+            _suggesstions.addAll(generateWordPairs().take(10));
+          }
+          return _buildRow(_suggesstions[index]);
+        });
+  }
+
+  Widget _buildRow(WordPair suggesstion) {
+    return ListTile(
+      title: Text(
+        suggesstion.asPascalCase,
+        style: _biggerFont,
+      ),
+    );
   }
 }
