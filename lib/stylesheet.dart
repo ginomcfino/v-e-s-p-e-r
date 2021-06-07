@@ -70,8 +70,8 @@ const ColorScheme _shrineColorScheme = ColorScheme(
   brightness: Brightness.light,
 );
 
-const Color shrinePink50 = Color(0xFFA7FFEB);
-const Color shrinePink100 = Color(0xFFC62828);
+const Color shrinePink50 = Color(0xFFA7FFCD);
+const Color shrinePink100 = Color(0xFF009787);
 const Color shrinePink300 = Color(0xFF69F0AE);
 const Color shrinePink400 = Color(0xFFAEEA00);
 

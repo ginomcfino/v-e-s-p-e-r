@@ -41,11 +41,44 @@ class RandomWords extends StatefulWidget {
 
 class _RandomWordsState extends State<RandomWords> {
   final _suggesstions = <WordPair>[];
+  final _saved = <WordPair>{};
   final _biggerFont = TextStyle(fontSize: 18.0);
+
+  void _pushSaved() {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) {
+          final tiles = _saved.map(
+            (WordPair pair) {
+              return ListTile(
+                title: Text(
+                  pair.asPascalCase,
+                  style: _biggerFont,
+                ),
+              );
+            },
+          );
+          final divided = tiles.isNotEmpty
+              ? ListTile.divideTiles(tiles: tiles).toList()
+              : <Widget>[];
+          return Scaffold(
+            appBar: AppBar(
+              title: Text("saved"),
+            ),
+          );
+        },
+      ),
+    );
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("VESPER")),
+      appBar: AppBar(
+        title: Text("VESPER"),
+        actions: [
+          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
+        ],
+      ),
       body: _buildSuggestions(),
     );
   }
@@ -64,11 +97,24 @@ class _RandomWordsState extends State<RandomWords> {
   }
 
   Widget _buildRow(WordPair suggesstion) {
+    final alreadySaved = _saved.contains(suggesstion);
     return ListTile(
-      title: Text(
-        suggesstion.asPascalCase,
-        style: _biggerFont,
-      ),
-    );
+        title: Text(
+          suggesstion.asPascalCase,
+          style: _biggerFont,
+        ),
+        trailing: Icon(
+          alreadySaved ? Icons.favorite : Icons.favorite_border,
+          color: alreadySaved ? Colors.red : null,
+        ),
+        onTap: () {
+          setState(() {
+            if (alreadySaved) {
+              _saved.remove(suggesstion);
+            } else {
+              _saved.add(suggesstion);
+            }
+          });
+        });
   }
 }
