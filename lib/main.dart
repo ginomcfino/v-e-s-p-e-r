@@ -19,22 +19,24 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    var word = RandomWords();
-    return Scaffold(
-      appBar: AppBar(
-        title: word,
-      ),
-      body: Center(child: RandomWords()),
-    );
-  }
-}
+// class HomePage extends StatelessWidget {
+//   var word = RandomWords();
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: word,
+//       ),
+//       body: Center(child: word),
+//     );
+//   }
+// }
 
 class RandomWords extends StatefulWidget {
   @override
-  _RandomWordsState createState() => _RandomWordsState();
+  _RandomWordsState createState() {
+    return _RandomWordsState();
+  }
 }
 
 class _RandomWordsState extends State<RandomWords> {
