@@ -28,7 +28,9 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
-      body: RandomWords(),
+      body: Center(
+        child: Text("TEXT"),
+      ),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
@@ -41,24 +43,26 @@ class MyHomePage extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('Drawer Header'),
+              child: Text('YOU'),
             ),
             ListTile(
-              title: Text('Item 1'),
+              title: Text('Trade'),
               onTap: () {
                 // Update the state of the app
                 // ...
                 // Then close the drawer
+
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('Item 2'),
+              title: Text('Group'),
               onTap: () {
                 // Update the state of the app
                 // ...
                 // Then close the drawer
-                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => RandomWords()));
               },
             ),
           ],
@@ -79,7 +83,7 @@ class _RandomWordsState extends State<RandomWords> {
   final _suggesstions = <WordPair>[];
   final _saved = <WordPair>{};
   final _biggerFont = TextStyle(fontSize: 18.0);
-  dynamic? font = 15;
+  //dynamic? font = 15;
 
   void _pushSaved() {
     Navigator.of(context).push(
@@ -110,12 +114,12 @@ class _RandomWordsState extends State<RandomWords> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("VESPER"),
-      //   actions: [
-      //     IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
-      //   ],
-      // ),
+      appBar: AppBar(
+        title: Text("VESPER"),
+        actions: [
+          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
+        ],
+      ),
       body: _buildSuggestions(),
     );
   }
