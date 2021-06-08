@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'stylesheet.dart';
@@ -37,6 +39,7 @@ class ChatPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('FriendlyChat')),
       body: Center(child: Text("Chat")),
+      drawer: Navigation(),
     );
   }
 }
@@ -53,44 +56,51 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Text("HOME"),
       ),
-      drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('YOU'),
+      drawer: Navigation(),
+    );
+  }
+}
+
+class Navigation extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      // Add a ListView to the drawer. This ensures the user can scroll
+      // through the options in the drawer if there isn't enough vertical
+      // space to fit everything.
+      child: ListView(
+        // Important: Remove any padding from the ListView.
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.blue,
             ),
-            ListTile(
-              title: Text('Trade'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => RandomWords()));
-              },
-            ),
-            ListTile(
-              title: Text('Group'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ChatPage(title: "Comms")));
-              },
-            ),
-          ],
-        ),
+            child: Text('YOU'),
+          ),
+          ListTile(
+            title: Text('Trade'),
+            onTap: () {
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => RandomWords()));
+            },
+          ),
+          ListTile(
+            title: Text('Group'),
+            onTap: () {
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ChatPage(title: "Comms")));
+            },
+          ),
+        ],
       ),
     );
   }
@@ -145,6 +155,7 @@ class _RandomWordsState extends State<RandomWords> {
         ],
       ),
       body: _buildSuggestions(),
+      drawer: Navigation(),
     );
   }
 
