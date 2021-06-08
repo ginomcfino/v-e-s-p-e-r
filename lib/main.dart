@@ -110,12 +110,12 @@ class _RandomWordsState extends State<RandomWords> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("VESPER"),
-        actions: [
-          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
-        ],
-      ),
+      // appBar: AppBar(
+      //   title: Text("VESPER"),
+      //   actions: [
+      //     IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
+      //   ],
+      // ),
       body: _buildSuggestions(),
     );
   }
