@@ -59,13 +59,13 @@ class _RandomWordsState extends State<RandomWords> {
             },
           );
           final divided = tiles.isNotEmpty
-              ? ListTile.divideTiles(tiles: tiles).toList()
+              ? ListTile.divideTiles(context: context, tiles: tiles).toList()
               : <Widget>[];
           return Scaffold(
-            appBar: AppBar(
-              title: Text("saved"),
-            ),
-          );
+              appBar: AppBar(
+                title: Text("saved"),
+              ),
+              body: ListView(children: divided));
         },
       ),
     );
@@ -105,7 +105,7 @@ class _RandomWordsState extends State<RandomWords> {
         ),
         trailing: Icon(
           alreadySaved ? Icons.favorite : Icons.favorite_border,
-          color: alreadySaved ? Colors.red : null,
+          color: alreadySaved ? Colors.red : Colors.green,
         ),
         onTap: () {
           setState(() {
