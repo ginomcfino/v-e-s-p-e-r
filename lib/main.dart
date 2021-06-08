@@ -14,23 +14,59 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Vesper",
       theme: buildShrineTheme(),
-      home: RandomWords(),
+      home: MyHomePage(title: "VESPER"),
     );
   }
 }
 
-// class HomePage extends StatelessWidget {
-//   var word = RandomWords();
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: word,
-//       ),
-//       body: Center(child: word),
-//     );
-//   }
-// }
+class MyHomePage extends StatelessWidget {
+  final String title;
+
+  MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(title)),
+      body: RandomWords(),
+      drawer: Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the drawer if there isn't enough vertical
+        // space to fit everything.
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text('Drawer Header'),
+            ),
+            ListTile(
+              title: Text('Item 1'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Item 2'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 class RandomWords extends StatefulWidget {
   @override
@@ -43,6 +79,7 @@ class _RandomWordsState extends State<RandomWords> {
   final _suggesstions = <WordPair>[];
   final _saved = <WordPair>{};
   final _biggerFont = TextStyle(fontSize: 18.0);
+  dynamic? font = 15;
 
   void _pushSaved() {
     Navigator.of(context).push(
