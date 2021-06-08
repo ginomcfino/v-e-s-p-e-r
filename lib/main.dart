@@ -19,6 +19,28 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class ChatPage extends StatelessWidget {
+  final String title;
+
+  ChatPage({Key? key, required this.title}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Vesper",
+      theme: buildShrineTheme(),
+      home: body(),
+    );
+  }
+
+  Widget body() {
+    return Scaffold(
+      appBar: AppBar(title: Text('FriendlyChat')),
+      body: Center(child: Text("Chat")),
+    );
+  }
+}
+
 class MyHomePage extends StatelessWidget {
   final String title;
 
@@ -29,7 +51,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: Center(
-        child: Text("TEXT"),
+        child: Text("HOME"),
       ),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
@@ -51,8 +73,8 @@ class MyHomePage extends StatelessWidget {
                 // Update the state of the app
                 // ...
                 // Then close the drawer
-
-                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => RandomWords()));
               },
             ),
             ListTile(
@@ -61,8 +83,10 @@ class MyHomePage extends StatelessWidget {
                 // Update the state of the app
                 // ...
                 // Then close the drawer
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => RandomWords()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ChatPage(title: "Comms")));
               },
             ),
           ],
