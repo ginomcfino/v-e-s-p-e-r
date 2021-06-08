@@ -21,29 +21,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class ChatPage extends StatelessWidget {
-  final String title;
-
-  ChatPage({Key? key, required this.title}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Vesper",
-      theme: buildShrineTheme(),
-      home: body(),
-    );
-  }
-
-  Widget body() {
-    return Scaffold(
-      appBar: AppBar(title: Text('FriendlyChat')),
-      body: Center(child: Text("Chat")),
-      drawer: Navigation(),
-    );
-  }
-}
-
 class MyHomePage extends StatelessWidget {
   final String title;
 
@@ -65,9 +42,6 @@ class Navigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      // Add a ListView to the drawer. This ensures the user can scroll
-      // through the options in the drawer if there isn't enough vertical
-      // space to fit everything.
       child: ListView(
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
@@ -89,7 +63,7 @@ class Navigation extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('Group'),
+            title: Text('Groups'),
             onTap: () {
               // Update the state of the app
               // ...
@@ -111,6 +85,34 @@ class RandomWords extends StatefulWidget {
   _RandomWordsState createState() {
     return _RandomWordsState();
   }
+}
+
+class ChatPage extends StatelessWidget {
+  final String title;
+
+  ChatPage({Key? key, required this.title}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('GROUP CHAT')),
+      body: Center(child: Text("CHATS")),
+      drawer: Navigation(),
+    );
+    // return MaterialApp(
+    //   title: "Groups",
+    //   theme: buildShrineTheme(),
+    //   home: body(),
+    // );
+  }
+
+  // Widget body() {
+  //   return Scaffold(
+  //     appBar: AppBar(title: Text('FriendlyChat')),
+  //     body: Center(child: Text("Chat")),
+  //     drawer: Navigation(),
+  //   );
+  // }
 }
 
 class _RandomWordsState extends State<RandomWords> {
