@@ -14,9 +14,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Vesper",
-      theme: buildShrineTheme(),
+      //title: "Vesper",
+      //theme: buildShrineTheme(),
       home: MyHomePage(title: "VESPER"),
+    );
+  }
+}
+
+class ChatPage extends StatelessWidget {
+  final String title;
+
+  ChatPage({Key? key, required this.title}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('GROUP CHAT')),
+      body: Center(child: Text("CHATS")),
+      drawer: Navigation(),
     );
   }
 }
@@ -48,9 +63,9 @@ class Navigation extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.pink,
             ),
-            child: Text('YOU'),
+            child: Text('YOUR PROFILE'),
           ),
           ListTile(
             title: Text('Trade'),
@@ -85,34 +100,6 @@ class RandomWords extends StatefulWidget {
   _RandomWordsState createState() {
     return _RandomWordsState();
   }
-}
-
-class ChatPage extends StatelessWidget {
-  final String title;
-
-  ChatPage({Key? key, required this.title}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('GROUP CHAT')),
-      body: Center(child: Text("CHATS")),
-      drawer: Navigation(),
-    );
-    // return MaterialApp(
-    //   title: "Groups",
-    //   theme: buildShrineTheme(),
-    //   home: body(),
-    // );
-  }
-
-  // Widget body() {
-  //   return Scaffold(
-  //     appBar: AppBar(title: Text('FriendlyChat')),
-  //     body: Center(child: Text("Chat")),
-  //     drawer: Navigation(),
-  //   );
-  // }
 }
 
 class _RandomWordsState extends State<RandomWords> {
