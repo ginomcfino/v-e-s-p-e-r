@@ -14,25 +14,48 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //title: "Vesper",
-      //theme: buildShrineTheme(),
+      title: "Vesper - made by GLG",
+      theme: buildShrineTheme(),
       home: MyHomePage(title: "VESPER"),
     );
   }
 }
 
-class ChatPage extends StatelessWidget {
+class ChatPage extends StatefulWidget {
   final String title;
 
   ChatPage({Key? key, required this.title}) : super(key: key);
 
   @override
+  _ChatPageState createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
+  final _textController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('GROUP CHAT')),
-      body: Center(child: Text("CHATS")),
+      body: _buildTextComposer(),
       drawer: Navigation(),
     );
+  }
+
+  Widget _buildTextComposer() {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 8.0),
+      child: TextField(
+        controller: _textController,
+        onSubmitted: _handleSubmitted,
+        decoration: InputDecoration.collapsed(hintText: 'Compose a message.'),
+        showCursor: true,
+      ),
+    );
+  }
+
+  void _handleSubmitted(String text) {
+    _textController.clear();
   }
 }
 
