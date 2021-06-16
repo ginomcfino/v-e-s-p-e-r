@@ -15,6 +15,7 @@ ThemeData buildShrineTheme() {
     buttonColor: shrinePink100,
     scaffoldBackgroundColor: shrineBackgroundWhite,
     cardColor: shrineBackgroundWhite,
+    // ignore: deprecated_member_use
     textSelectionColor: shrinePink100,
     errorColor: shrineErrorRed,
     buttonTheme: ButtonThemeData(
@@ -70,12 +71,12 @@ const ColorScheme _shrineColorScheme = ColorScheme(
   brightness: Brightness.light,
 );
 
-const Color shrinePink50 = Color(0xFFA7FFCD);
+const Color shrinePink50 = Color(0x578EE02F);
 const Color shrinePink100 = Color(0xFFFFFFFF);
 const Color shrinePink300 = Color(0xFF69F0AE);
 const Color shrinePink400 = Color(0xFFAEEA00);
 
-const Color shrineBrown900 = Color(0xFF442B2D);
+const Color shrineBrown900 = Color(0xFF3BA000);
 const Color shrineBrown600 = Color(0xFF7D4F52);
 
 const Color shrineErrorRed = Color(0xFFC5032B);

@@ -25,11 +25,25 @@ class _ChatPageState extends State<ChatPage> {
   Widget _buildTextComposer() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 8.0),
-      child: TextField(
-        controller: _textController,
-        onSubmitted: _handleSubmitted,
-        decoration: InputDecoration.collapsed(hintText: 'Compose a message.'),
-        showCursor: true,
+      child: Row(
+        children: [
+          Flexible(
+            child: TextField(
+              controller: _textController,
+              onSubmitted: _handleSubmitted,
+              decoration:
+                  InputDecoration.collapsed(hintText: 'Write a message.'),
+              showCursor: true,
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 4.0),
+            child: IconButton(
+              icon: const Icon(Icons.rtt),
+              onPressed: () => _handleSubmitted(_textController.text),
+            ),
+          )
+        ],
       ),
     );
   }
