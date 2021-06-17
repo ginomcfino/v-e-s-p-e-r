@@ -72,9 +72,9 @@ const ColorScheme _shrineColorScheme = ColorScheme(
 );
 
 const Color shrinePink50 = Color(0x578EE02F);
-const Color shrinePink100 = Color(0xFFFFFFFF);
+const Color shrinePink100 = Color(0xFF770F77);
 const Color shrinePink300 = Color(0xFF69F0AE);
-const Color shrinePink400 = Color(0xFFAEEA00);
+const Color shrinePink400 = Color(0xFF8100EA);
 
 const Color shrineBrown900 = Color(0xFF3BA000);
 const Color shrineBrown600 = Color(0xFF7D4F52);
