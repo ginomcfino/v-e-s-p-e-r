@@ -11,6 +11,7 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
+  final List<ChatMessage> _messages = [];
   final _textController = TextEditingController();
 
   @override
@@ -51,7 +52,39 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 
+  //todo: connect to Firebase cloud messaging
   void _handleSubmitted(String text) {
     _textController.clear();
+    ChatMessage message = ChatMessage(text: text);
+  }
+}
+
+class ChatMessage extends StatelessWidget {
+  //const ChatMessage({Key? key}) : super(key: key);
+  ChatMessage({required this.text});
+  final String text;
+  String _name = "Marcus Ji"; //todo: pull username
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          margin: const EdgeInsets.only(right: 16.0),
+          child: CircleAvatar(child: Text(_name[0])), //need change
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(_name, style: Theme.of(context).textTheme.headline4), //change
+            Container(
+              margin: EdgeInsets.only(top: 5.0),
+              child: Text(text),
+            )
+          ],
+        )
+      ],
+    );
   }
 }
