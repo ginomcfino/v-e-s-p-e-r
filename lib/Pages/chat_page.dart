@@ -10,7 +10,7 @@ class ChatPage extends StatefulWidget {
   _ChatPageState createState() => _ChatPageState();
 }
 
-class _ChatPageState extends State<ChatPage> {
+class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
   final List<ChatMessage> _messages = [];
   final _textController = TextEditingController();
   final FocusNode _focusNode = FocusNode();
@@ -43,7 +43,7 @@ class _ChatPageState extends State<ChatPage> {
     return IconTheme(
       data: IconThemeData(color: Theme.of(context).buttonColor),
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 8.0),
+        margin: EdgeInsets.symmetric(horizontal: 22.0),
         child: Row(
           children: [
             Flexible(
@@ -72,42 +72,62 @@ class _ChatPageState extends State<ChatPage> {
   //todo: connect to Firebase cloud messaging
   void _handleSubmitted(String text) {
     _textController.clear();
-    ChatMessage message = ChatMessage(
+    ChatMessage _message = ChatMessage(
       text: text,
+      animationController: AnimationController(
+        duration: const Duration(milliseconds: 700),
+        vsync: this,
+      ),
     );
     setState(() {
-      _messages.insert(0, message);
+      _messages.insert(0, _message);
     });
     _focusNode.requestFocus();
+    _message.animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    for (var message in _messages) {
+      message.animationController.dispose();
+    }
+    super.dispose();
   }
 }
 
 class ChatMessage extends StatelessWidget {
   //const ChatMessage({Key? key}) : super(key: key);
-  ChatMessage({required this.text});
+  ChatMessage({required this.text, required this.animationController});
   final String text;
+  final AnimationController animationController;
   String _name = "Marcus Ji"; //todo: pull username
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          margin: const EdgeInsets.only(right: 16.0),
-          child: CircleAvatar(child: Text(_name[0])), //need change
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(_name, style: Theme.of(context).textTheme.headline4), //change
-            Container(
-              margin: EdgeInsets.only(top: 5.0),
-              child: Text(text),
-            )
-          ],
-        )
-      ],
+    return SizeTransition(
+      sizeFactor:
+          CurvedAnimation(parent: animationController, curve: Curves.easeOut),
+      axisAlignment: 0.0,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            margin: const EdgeInsets.only(right: 16.0),
+            child: CircleAvatar(child: Text(_name[0])), //need change
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(_name,
+                  style: Theme.of(context).textTheme.headline4), //change
+              Container(
+                margin: EdgeInsets.only(top: 5.0),
+                child: Text(text),
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 }
