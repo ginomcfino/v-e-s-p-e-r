@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vesper/Design/stylesheet.dart';
 import 'package:vesper/Widgets/walletHeader.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: primaryColor,
       body: Column(
         children: <Widget>[
           Container(

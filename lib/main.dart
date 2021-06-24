@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Vesper - made by GLG",
       theme: ThemeData(fontFamily: 'Circular'),
       home: HomePage(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//0xFF28063F)
 Color primaryColor = Color(0xFFCADCED);
 
 List<BoxShadow> customShadow = [
@@ -10,7 +11,7 @@ List<BoxShadow> customShadow = [
     blurRadius: 30,
   ),
   BoxShadow(
-    color: Color(0x578EE02F).withOpacity(.2),
+    color: Colors.blue.shade900.withOpacity(.2),
     spreadRadius: 2,
     offset: Offset(7, 7),
     blurRadius: 20,
