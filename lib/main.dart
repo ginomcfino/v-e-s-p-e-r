@@ -6,8 +6,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import 'Pages/chat_page.dart';
-import 'Design/stylesheet.dart';
+import 'Pages/chatPage.dart';
+import 'Pages/homePage.dart';
+// import 'Design/stylesheet.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Vesper - made by GLG",
-      theme: buildShrineTheme(),
-      home: MyHomePage(title: "VESPER"),
+      theme: ThemeData(fontFamily: 'Circular'),
+      home: HomePage(),
     );
   }
 }
@@ -166,14 +167,5 @@ class _RandomWordsState extends State<RandomWords> {
             }
           });
         });
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
