@@ -7,7 +7,9 @@ class WalletHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 20),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             "Aurelius' Wallet",
@@ -25,11 +27,17 @@ class WalletHeader extends StatelessWidget {
                 Center(
                   child: Container(
                     decoration: BoxDecoration(
-                        boxShadow: customShadow,
-                        color: Colors.deepOrange,
-                        shape: BoxShape.circle),
+                        color: Colors.deepOrange, shape: BoxShape.circle),
                   ),
                 ),
+                Center(
+                  child: Container(
+                    margin: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                        color: primaryColor, shape: BoxShape.circle),
+                  ),
+                ),
+                Center(child: Icon(Icons.add_alarm_rounded)) //TODO: fix this
               ],
             ),
           ),
