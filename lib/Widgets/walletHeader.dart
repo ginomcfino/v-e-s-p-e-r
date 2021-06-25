@@ -12,7 +12,7 @@ class WalletHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            "Aurelius' Wallet",
+            "Aurelius' Account",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           Container(

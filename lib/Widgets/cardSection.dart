@@ -6,14 +6,17 @@ import 'package:vesper/Widgets/cardDetails.dart';
 class CardSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+
     return Column(
       children: <Widget>[
         Container(
           margin: EdgeInsets.symmetric(horizontal: 20),
-          alignment: Alignment.topLeft,
+          alignment: Alignment.centerLeft,
           child: Text(
             "My Groups",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
         ),
         Expanded(
