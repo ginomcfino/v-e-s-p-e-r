@@ -22,17 +22,23 @@ class CardSection extends StatelessWidget {
         Expanded(
           child: ListView.builder(
               itemCount: 3,
+              physics: PageScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, i) {
                 //MasterCard Container Widget
                 return Container(
-                  width: MediaQuery.of(context).size.width - 20,
-                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 40),
+                  width: MediaQuery.of(context).size.width - 30,
                   decoration: BoxDecoration(
                     color: primaryColor,
                     boxShadow: customShadow,
                     borderRadius: BorderRadius.circular(20),
+                    // border: Border.all(
+                    //   width: 3,
+                    //   color: Colors.green,
+                    //   style: BorderStyle.solid,
+                    // ),
                   ),
+                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 40),
                   child: Stack(
                     children: <Widget>[
                       //Bottom Half-Circle
@@ -54,16 +60,10 @@ class CardSection extends StatelessWidget {
                         top: -100,
                         bottom: -100,
                         child: Container(
-                          clipBehavior: Clip.antiAlias,
                           decoration: BoxDecoration(
                             boxShadow: customShadow,
                             shape: BoxShape.circle,
-                            color: Colors.white38, //TODO: color
-                            // border: Border.all(
-                            //   width: 3,
-                            //   color: Colors.green,
-                            //   style: BorderStyle.solid,
-                            // ),
+                            color: Colors.white30, //TODO: color
                           ),
                         ),
                       ),
