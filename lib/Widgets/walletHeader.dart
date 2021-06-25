@@ -37,7 +37,7 @@ class WalletHeader extends StatelessWidget {
                         color: primaryColor, shape: BoxShape.circle),
                   ),
                 ),
-                Center(child: Icon(Icons.add_alarm_rounded)) //TODO: fix this
+                Center(child: Icon(Icons.add_alarm_rounded)) //TODO: modify this
               ],
             ),
           ),
