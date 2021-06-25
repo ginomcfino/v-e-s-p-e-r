@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vesper/Widgets/signalStatDisplay.dart';
 import 'package:vesper/Design/stylesheet.dart';
 import 'package:vesper/Widgets/cardSection.dart';
 import 'package:vesper/Widgets/walletHeader.dart';
@@ -21,7 +22,7 @@ class HomePage extends StatelessWidget {
             child: CardSection(),
           ),
           Expanded(
-            child: Container(),
+            child: StatDisplay(),
           )
         ],
       ),

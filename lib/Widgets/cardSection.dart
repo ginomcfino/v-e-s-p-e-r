@@ -6,9 +6,6 @@ import 'package:vesper/Widgets/cardDetails.dart';
 class CardSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
-
     return Column(
       children: <Widget>[
         Container(
@@ -21,9 +18,9 @@ class CardSection extends StatelessWidget {
         ),
         Expanded(
           child: ListView.builder(
+              scrollDirection: Axis.horizontal,
               itemCount: 3,
               physics: PageScrollPhysics(),
-              scrollDirection: Axis.horizontal,
               itemBuilder: (context, i) {
                 //MasterCard Container Widget
                 return Container(
@@ -43,7 +40,6 @@ class CardSection extends StatelessWidget {
                     children: <Widget>[
                       //Bottom Half-Circle
                       Positioned.fill(
-                        left: 0,
                         top: 150,
                         bottom: -200,
                         child: Container(

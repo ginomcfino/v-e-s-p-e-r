@@ -3,6 +3,15 @@ import 'package:flutter/material.dart';
 //0xFF350A4E)
 Color primaryColor = Color(0xFFCADCED);
 
+List pieColors = [
+  Colors.indigo.shade400,
+  Colors.blue.shade600,
+  Colors.green.shade700,
+  Colors.amber.shade400,
+  Colors.deepOrange,
+  Colors.brown,
+];
+
 List<BoxShadow> customShadow = [
   BoxShadow(
     color: Colors.white.withOpacity(0.5),
