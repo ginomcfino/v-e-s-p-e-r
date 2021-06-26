@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 //0xFF350A4E)
 Color primaryColor = Color(0xFFCADCED);
+Color secondaryColor = Colors.white.withOpacity(.5);
+Color bgColor = Colors.blue.shade900.withOpacity(.2);
+
+const defaultPadding = 20.0;
 
 List pieColors = [
   Colors.indigo.shade400,

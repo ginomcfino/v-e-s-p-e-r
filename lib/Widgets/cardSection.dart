@@ -9,7 +9,7 @@ class CardSection extends StatelessWidget {
     return Column(
       children: <Widget>[
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 20),
+          margin: EdgeInsets.only(left: 20, right: 20, top: 20),
           alignment: Alignment.centerLeft,
           child: Text(
             "My Groups",
@@ -35,7 +35,7 @@ class CardSection extends StatelessWidget {
                     //   style: BorderStyle.solid,
                     // ),
                   ),
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 40),
+                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 30),
                   child: Stack(
                     children: <Widget>[
                       //Bottom Half-Circle

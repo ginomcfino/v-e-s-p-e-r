@@ -2,13 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-//import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'Pages/chatPage.dart';
-import 'Pages/homePage.dart';
-// import 'Design/stylesheet.dart';
+import 'Pages/personalAccount.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,29 +14,29 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Vesper - made by GLG",
+      title: "Vesper - trading made easy",
       theme: ThemeData(fontFamily: 'Circular'),
-      home: HomePage(),
+      home: AccountPage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  final String title;
+// class MyHomePage extends StatelessWidget {
+//   final String title;
 
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+//   MyHomePage({Key? key, required this.title}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: Center(
-        child: Text("HOME"),
-      ),
-      drawer: Navigation(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text(title)),
+//       body: Center(
+//         child: Text("HOME"),
+//       ),
+//       drawer: Navigation(),
+//     );
+//   }
+// }
 
 class Navigation extends StatelessWidget {
   @override
@@ -52,10 +49,10 @@ class Navigation extends StatelessWidget {
           DrawerHeader(
             decoration:
                 BoxDecoration(color: Theme.of(context).primaryColorLight),
-            child: Text('YOUR PROFILE'),
+            child: Text('V E S P E R'),
           ),
           ListTile(
-            title: Text('Trade'),
+            title: Text('Signal Center'),
             onTap: () {
               // Update the state of the app
               // ...
@@ -65,7 +62,7 @@ class Navigation extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('Groups'),
+            title: Text('Group Comms'),
             onTap: () {
               // Update the state of the app
               // ...
@@ -76,6 +73,13 @@ class Navigation extends StatelessWidget {
                       builder: (context) => ChatPage(title: "Comms")));
             },
           ),
+          ListTile(
+            title: Text('Personal Account'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AccountPage()));
+            },
+          )
         ],
       ),
     );
