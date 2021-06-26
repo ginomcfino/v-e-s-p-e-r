@@ -70,9 +70,9 @@ class StatDisplay extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(width: 10),
-                                    Text(
-                                      e["name"],
-                                      style: TextStyle(fontSize: 16),
+                                    FittedBox(
+                                      fit: BoxFit.fitWidth,
+                                      child: Text(e["name"]),
                                     )
                                   ],
                                 ),

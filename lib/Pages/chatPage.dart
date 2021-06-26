@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vesper/Design/stylesheet.dart';
 import 'package:vesper/main.dart';
 
 class ChatPage extends StatefulWidget {
@@ -18,7 +19,11 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('GROUP CHAT')),
+      appBar: AppBar(
+        title: Text('GROUP CHAT'),
+        backgroundColor: primaryColor,
+      ),
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Flexible(
