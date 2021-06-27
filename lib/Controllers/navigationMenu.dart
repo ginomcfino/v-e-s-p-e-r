@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vesper/Pages/chatPage.dart';
+import 'package:vesper/Pages/dashboard.dart';
 import 'package:vesper/Pages/personalAccount.dart';
 import 'package:vesper/Pages/randomWords.dart';
 
@@ -15,6 +16,16 @@ class Navigation extends StatelessWidget {
             decoration:
                 BoxDecoration(color: Theme.of(context).primaryColorLight),
             child: Text('V E S P E R'),
+          ),
+          ListTile(
+            title: Text('Dashboard'),
+            onTap: () {
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Dashboard()));
+            },
           ),
           ListTile(
             title: Text('Signal Center'),

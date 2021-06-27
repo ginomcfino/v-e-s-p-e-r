@@ -8,7 +8,19 @@ class Dashboard extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Row(
-        children: [],
+        children: [
+          Expanded(
+            child: Container(
+              color: Colors.white,
+            ),
+          ),
+          Expanded(
+            flex: 5,
+            child: Container(
+              color: Colors.deepPurple,
+            ),
+          )
+        ],
       )),
     );
   }
