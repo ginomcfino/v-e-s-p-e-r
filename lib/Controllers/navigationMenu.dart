@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vesper/Controllers/bottomNavigation.dart';
 import 'package:vesper/Pages/chatPage.dart';
 import 'package:vesper/Pages/dashboard.dart';
 import 'package:vesper/Pages/personalAccount.dart';
@@ -16,6 +17,13 @@ class Navigation extends StatelessWidget {
             decoration:
                 BoxDecoration(color: Theme.of(context).primaryColorLight),
             child: Text('V E S P E R'),
+          ),
+          ListTile(
+            title: Text('Personal Account'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AccountPage()));
+            },
           ),
           ListTile(
             title: Text('Dashboard'),
@@ -50,10 +58,10 @@ class Navigation extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('Personal Account'),
+            title: Text('Bottom Nav'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => AccountPage()));
+                  MaterialPageRoute(builder: (context) => MyStatefulWidget()));
             },
           )
         ],

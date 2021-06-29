@@ -13,7 +13,10 @@ class AccountPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primaryColor,
-        title: Text('My Profile'),
+        title: Text(
+          'My Profile',
+          style: TextStyle(color: Colors.deepOrange),
+        ),
         foregroundColor: Colors.black,
         elevation: 0,
       ),
