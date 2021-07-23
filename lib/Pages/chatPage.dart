@@ -24,21 +24,23 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
         backgroundColor: primaryColor,
       ),
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          Flexible(
-            child: ListView.builder(
-              padding: EdgeInsets.all(8.0),
-              reverse: true,
-              itemBuilder: (_, int index) => _messages[index],
-              itemCount: _messages.length,
+      body: SafeArea(
+        child: Column(
+          children: [
+            Flexible(
+              child: ListView.builder(
+                padding: EdgeInsets.all(8.0),
+                reverse: true,
+                itemBuilder: (_, int index) => _messages[index],
+                itemCount: _messages.length,
+              ),
             ),
-          ),
-          Divider(height: 1.0),
-          Container(
-              decoration: BoxDecoration(color: Theme.of(context).cardColor),
-              child: _buildTextComposer())
-        ],
+            Divider(height: 1.0),
+            Container(
+                decoration: BoxDecoration(color: Theme.of(context).cardColor),
+                child: _buildTextComposer())
+          ],
+        ),
       ),
       drawer: Navigation(),
     );
@@ -100,18 +102,23 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
   }
 }
 
-class ChatMessage extends StatelessWidget {
+class ChatMessage extends StatefulWidget {
   //const ChatMessage({Key? key}) : super(key: key);
   ChatMessage({required this.text, required this.animationController});
   final String text;
   final AnimationController animationController;
-  String _name = "Marcus Ji"; //todo: pull username
 
+  @override
+  _ChatMessageState createState() => _ChatMessageState();
+}
+
+class _ChatMessageState extends State<ChatMessage> {
+  String _name = "Marcus Ji";
   @override
   Widget build(BuildContext context) {
     return SizeTransition(
-      sizeFactor:
-          CurvedAnimation(parent: animationController, curve: Curves.easeOut),
+      sizeFactor: CurvedAnimation(
+          parent: widget.animationController, curve: Curves.easeOut),
       axisAlignment: 0.0,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +134,7 @@ class ChatMessage extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline4), //change
               Container(
                 margin: EdgeInsets.only(top: 5.0),
-                child: Text(text),
+                child: Text(widget.text),
               )
             ],
           )

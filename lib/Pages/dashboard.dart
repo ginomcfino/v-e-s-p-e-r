@@ -19,21 +19,24 @@ class Dashboard extends StatelessWidget {
       ),
       drawer: Navigation(),
       body: SafeArea(
-          child: Row(
-        children: [
-          Expanded(
-            child: Container(
-              color: Colors.white,
+        bottom: false,
+        child: Row(
+          children: [
+            Expanded(
+              flex: 4,
+              child: Container(
+                color: Colors.white,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 5,
-            child: Container(
-              color: Colors.deepPurple,
-            ),
-          )
-        ],
-      )),
+            Expanded(
+              flex: 5,
+              child: Container(
+                color: Colors.deepPurple,
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
