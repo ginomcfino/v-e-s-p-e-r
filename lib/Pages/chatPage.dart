@@ -22,8 +22,9 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
       appBar: AppBar(
         title: Text('GROUP CHAT'),
         backgroundColor: primaryColor,
+        elevation: 0,
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: primaryColor,
       body: SafeArea(
         child: Column(
           children: [
