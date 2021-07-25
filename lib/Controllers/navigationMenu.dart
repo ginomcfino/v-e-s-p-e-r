@@ -63,6 +63,28 @@ class Navigation extends StatelessWidget {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => MyStatefulWidget()));
             },
+          ),
+          ListTile(
+            title: Text('Secret Santa'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Scaffold(
+                            appBar: AppBar(
+                              title: const Text('Surprise Surprise'),
+                            ),
+                            drawer: Navigation(),
+                            body: Center(
+                              child: Container(
+                                child: Center(child: Text("Aha!")),
+                                color: Colors.red[900],
+                                // width: MediaQuery.of(context).size.width,
+                                // height: MediaQuery.of(context).size.height,
+                              ),
+                            ),
+                          )));
+            },
           )
         ],
       ),
