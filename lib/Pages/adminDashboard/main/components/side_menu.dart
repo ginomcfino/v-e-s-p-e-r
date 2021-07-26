@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vesper/Pages/personalAccount.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -21,7 +22,10 @@ class SideMenu extends StatelessWidget {
           DrawerListTile(
             title: "Dashbord",
             svgSrc: "assets/icons/menu_dashbord.svg",
-            press: () {},
+            press: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AccountPage()));
+            },
           ),
           DrawerListTile(
             title: "Transaction",
