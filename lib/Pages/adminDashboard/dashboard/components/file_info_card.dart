@@ -2,7 +2,7 @@ import 'package:vesper/data/MyFiles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:vesper/constants.dart';
+import 'package:vesper/design/stylesheet.dart';
 
 class FileInfoCard extends StatelessWidget {
   const FileInfoCard({
@@ -80,7 +80,7 @@ class FileInfoCard extends StatelessWidget {
 class ProgressLine extends StatelessWidget {
   const ProgressLine({
     Key? key,
-    this.color = primaryColor,
+    this.color = Colors.red,
     required this.percentage,
   }) : super(key: key);
 

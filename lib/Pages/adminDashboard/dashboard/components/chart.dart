@@ -1,7 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-import 'package:vesper/constants.dart';
+import 'package:vesper/design/stylesheet.dart';
 
 class Chart extends StatelessWidget {
   const Chart({

@@ -1,8 +1,8 @@
-import 'package:vesper/Data/MyFiles.dart';
+import 'package:vesper/data/MyFiles.dart';
 import 'package:vesper/responsive.dart';
 import 'package:flutter/material.dart';
 
-import 'package:vesper/constants.dart';
+import 'package:vesper/design/stylesheet.dart';
 import 'file_info_card.dart';
 
 class MyFiles extends StatelessWidget {
