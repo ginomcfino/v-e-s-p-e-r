@@ -10,9 +10,13 @@ class SideMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
+        padding: EdgeInsets.only(top: 0.0),
         children: [
           DrawerHeader(
-            child: Image.asset("assets/images/logo.png"),
+            decoration: BoxDecoration(color: Colors.lightGreenAccent[100]),
+            child: Container(
+              child: Center(child: Image.asset("assets/images/logo.png")),
+            ),
           ),
           DrawerListTile(
             title: "Dashbord",
@@ -79,12 +83,12 @@ class DrawerListTile extends StatelessWidget {
       horizontalTitleGap: 0.0,
       leading: SvgPicture.asset(
         svgSrc,
-        color: Colors.white54,
+        color: Colors.orangeAccent[700],
         height: 16,
       ),
       title: Text(
         title,
-        style: TextStyle(color: Colors.white54),
+        style: TextStyle(color: Colors.indigo[700]),
       ),
     );
   }
