@@ -3,7 +3,10 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:vesper/Pages/adminDashboard/main/main_screen.dart';
 import 'Pages/personalAccount.dart';
+import 'controllers/menuController.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +17,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Vesper - trading made easy",
       theme: ThemeData(fontFamily: 'Circular'),
-      home: AccountPage(),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => MenuController(),
+          ),
+        ],
+        child: MainScreen(),
+      ),
+      //home: AccountPage(),
     );
   }
 }
