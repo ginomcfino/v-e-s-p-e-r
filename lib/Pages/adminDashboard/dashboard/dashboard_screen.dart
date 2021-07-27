@@ -2,7 +2,7 @@ import 'package:vesper/responsive.dart';
 import 'package:vesper/Pages/adminDashboard/dashboard/components/my_fields.dart';
 import 'package:flutter/material.dart';
 
-import 'package:vesper/design/stylesheet.dart';
+import 'package:vesper/design/constants.dart';
 import 'components/header.dart';
 
 import 'components/recent_files.dart';

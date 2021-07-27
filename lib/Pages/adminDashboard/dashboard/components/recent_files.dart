@@ -3,7 +3,7 @@ import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'package:vesper/design/stylesheet.dart';
+import 'package:vesper/design/constants.dart';
 
 class RecentFiles extends StatelessWidget {
   const RecentFiles({

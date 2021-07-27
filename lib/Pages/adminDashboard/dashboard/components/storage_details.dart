@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:vesper/design/stylesheet.dart';
+import 'package:vesper/design/constants.dart';
 import 'chart.dart';
 import 'storage_info_card.dart';
 

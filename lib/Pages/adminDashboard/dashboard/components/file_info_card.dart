@@ -2,7 +2,7 @@ import 'package:vesper/data/MyFiles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:vesper/design/stylesheet.dart';
+import 'package:vesper/design/constants.dart';
 
 class FileInfoCard extends StatelessWidget {
   const FileInfoCard({

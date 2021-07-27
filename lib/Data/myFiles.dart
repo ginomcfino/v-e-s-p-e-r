@@ -1,4 +1,4 @@
-import 'package:vesper/design/stylesheet.dart';
+import 'package:vesper/design/constants.dart';
 import 'package:flutter/material.dart';
 
 class CloudStorageInfo {
