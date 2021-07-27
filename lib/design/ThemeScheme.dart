@@ -1,4 +1,4 @@
-import 'package:chat/constants.dart';
+import 'package:vesper/design/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
