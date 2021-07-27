@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:vesper/Design/stylesheet.dart';
+import 'package:vesper/design/constants.dart';
 import 'package:vesper/Widgets/cardDetails.dart';
 
 class CardSection extends StatelessWidget {

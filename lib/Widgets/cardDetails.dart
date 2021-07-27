@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vesper/Design/stylesheet.dart';
+import 'package:vesper/design/constants.dart';
 
 class CardDetails extends StatelessWidget {
   const CardDetails({Key? key}) : super(key: key);

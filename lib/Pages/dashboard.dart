@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vesper/Controllers/navigationMenu.dart';
-import 'package:vesper/Design/stylesheet.dart';
+import 'package:vesper/design/constants.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);

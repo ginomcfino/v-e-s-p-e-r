@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:vesper/Data/signalStats.dart';
-import 'package:vesper/Design/stylesheet.dart';
+import 'package:vesper/data/signalStats.dart';
+import 'package:vesper/design/constants.dart';
 
 class PieChart extends StatelessWidget {
   const PieChart({Key? key}) : super(key: key);

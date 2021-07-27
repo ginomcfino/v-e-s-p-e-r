@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vesper/Controllers/navigationMenu.dart';
 import 'package:vesper/Widgets/signalStatSection.dart';
-import 'package:vesper/Design/stylesheet.dart';
+import 'package:vesper/design/constants.dart';
 import 'package:vesper/Widgets/cardSection.dart';
 import 'package:vesper/Widgets/walletHeader.dart';
 
