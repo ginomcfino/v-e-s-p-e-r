@@ -20,7 +20,7 @@ class SideMenu extends StatelessWidget {
             ),
           ),
           DrawerListTile(
-            title: "Dashbord",
+            title: "Account",
             svgSrc: "assets/icons/menu_dashbord.svg",
             press: () {
               Navigator.push(context,
