@@ -17,15 +17,26 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Vesper - trading made easy",
       theme: ThemeData(fontFamily: 'Circular'),
-      home: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (context) => MenuController(),
-          ),
-        ],
-        child: MainScreen(),
-      ),
+      home: ProviderScreen(),
       //home: AccountPage(),
+    );
+  }
+}
+
+class ProviderScreen extends StatelessWidget {
+  const ProviderScreen({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => MenuController(),
+        ),
+      ],
+      child: MainScreen(),
     );
   }
 }

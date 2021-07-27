@@ -7,6 +7,7 @@ import 'package:vesper/Pages/dashboard.dart';
 import 'package:vesper/Pages/personalAccount.dart';
 import 'package:vesper/Pages/randomWords.dart';
 import 'package:vesper/controllers/menuController.dart';
+import 'package:vesper/main.dart';
 
 class Navigation extends StatelessWidget {
   @override
@@ -73,14 +74,7 @@ class Navigation extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MultiProvider(
-                    providers: [
-                      ChangeNotifierProvider(
-                        create: (context) => MenuController(),
-                      ),
-                    ],
-                    child: MainScreen(),
-                  ),
+                  builder: (context) => ProviderScreen(),
                 ),
               );
             },
