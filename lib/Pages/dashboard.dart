@@ -41,6 +41,28 @@ class Dashboard extends StatelessWidget {
   }
 }
 
+class Hmmm2 extends StatelessWidget {
+  const Hmmm2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurpleAccent,
+        elevation: 0,
+      ),
+      drawer: Navigation(),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: SweepGradient(
+            colors: [Colors.deepOrangeAccent, Colors.deepPurpleAccent],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
 

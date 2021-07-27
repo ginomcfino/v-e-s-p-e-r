@@ -1,14 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:vesper/Controllers/bottomNavigation.dart';
-import 'package:vesper/Pages/adminDashboard/main/main_screen.dart';
 import 'package:vesper/Pages/chatPage.dart';
 import 'package:vesper/Pages/dashboard.dart';
 import 'package:vesper/Pages/personalAccount.dart';
 import 'package:vesper/Pages/randomWords.dart';
-import 'package:vesper/controllers/menuController.dart';
 import 'package:vesper/main.dart';
 
 class Navigation extends StatelessWidget {
@@ -37,8 +34,8 @@ class Navigation extends StatelessWidget {
               // Update the state of the app
               // ...
               // Then close the drawer
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Dashboard()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Hmmm2()));
             },
           ),
           ListTile(
@@ -93,28 +90,6 @@ class Navigation extends StatelessWidget {
             },
           ),
         ],
-      ),
-    );
-  }
-}
-
-class Hmmm2 extends StatelessWidget {
-  const Hmmm2({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      drawer: Navigation(),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: SweepGradient(
-            colors: [Colors.deepOrangeAccent, Colors.deepPurpleAccent],
-          ),
-        ),
       ),
     );
   }
