@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:vesper/Controllers/bottomNavigation.dart';
+import 'package:vesper/Pages/adminDashboard/main/main_screen.dart';
 import 'package:vesper/Pages/chatPage.dart';
 import 'package:vesper/Pages/dashboard.dart';
 import 'package:vesper/Pages/personalAccount.dart';
 import 'package:vesper/Pages/randomWords.dart';
+import 'package:vesper/controllers/menuController.dart';
 
 class Navigation extends StatelessWidget {
   @override
@@ -68,25 +71,45 @@ class Navigation extends StatelessWidget {
             title: Text('Secret Santa'),
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Scaffold(
-                            appBar: AppBar(
-                              title: const Text('Surprise Surprise'),
-                            ),
-                            drawer: Navigation(),
-                            body: Center(
-                              child: Container(
-                                child: Center(child: Text("Aha!")),
-                                color: Colors.red[900],
-                                // width: MediaQuery.of(context).size.width,
-                                // height: MediaQuery.of(context).size.height,
-                              ),
-                            ),
-                          )));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MultiProvider(
+                    providers: [
+                      ChangeNotifierProvider(
+                        create: (context) => MenuController(),
+                      ),
+                    ],
+                    child: MainScreen(),
+                  ),
+                ),
+              );
             },
           )
         ],
+      ),
+    );
+  }
+}
+
+class SurpriseSurprie extends StatelessWidget {
+  const SurpriseSurprie({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Surprise Surprise'),
+      ),
+      drawer: Navigation(),
+      body: Center(
+        child: Container(
+          child: Center(child: Text("Aha!")),
+          color: Colors.red[900],
+          // width: MediaQuery.of(context).size.width,
+          // height: MediaQuery.of(context).size.height,
+        ),
       ),
     );
   }
