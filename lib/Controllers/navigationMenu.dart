@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vesper/Controllers/bottomNavigation.dart';
@@ -78,8 +80,68 @@ class Navigation extends StatelessWidget {
                 ),
               );
             },
-          )
+          ),
+          ListTile(
+            title: Text('Working Page'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Hmmm(),
+                ),
+              );
+            },
+          ),
         ],
+      ),
+    );
+  }
+}
+
+class Hmmm2 extends StatelessWidget {
+  const Hmmm2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      drawer: Navigation(),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: SweepGradient(
+            colors: [Colors.deepOrangeAccent, Colors.deepPurpleAccent],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Hmmm extends StatelessWidget {
+  const Hmmm({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Colors.lightGreen, Colors.lightBlue],
+        ),
+      ),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Dynamic Future"),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+        ),
+        backgroundColor: Colors.transparent,
       ),
     );
   }

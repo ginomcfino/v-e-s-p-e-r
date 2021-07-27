@@ -9,10 +9,10 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.deepOrange[200],
         title: Text(
           'My Profile',
-          style: TextStyle(color: Colors.lightGreenAccent[700]),
+          style: TextStyle(color: Colors.lightGreenAccent),
         ),
         foregroundColor: Colors.black,
         elevation: 0,
