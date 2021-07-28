@@ -15,7 +15,7 @@ class RecentFiles extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        color: secondaryColor,
+        color: cardBgColor.withOpacity(.6),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(

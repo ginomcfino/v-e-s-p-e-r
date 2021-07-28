@@ -48,9 +48,9 @@ class ProfileCard extends StatelessWidget {
         vertical: defaultPadding / 2,
       ),
       decoration: BoxDecoration(
-        color: secondaryColor,
+        color: cardBgColor.withOpacity(.5),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
-        border: Border.all(color: Colors.white10),
+        //border: Border.all(color: Colors.white10),
       ),
       child: Row(
         children: [
@@ -81,7 +81,7 @@ class SearchField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: "Search",
-        fillColor: secondaryColor,
+        fillColor: cardBgColor.withOpacity(.3),
         filled: true,
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
@@ -93,7 +93,7 @@ class SearchField extends StatelessWidget {
             padding: EdgeInsets.all(defaultPadding * 0.75),
             margin: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
             decoration: BoxDecoration(
-              color: primaryColor,
+              color: Theme.of(context).iconTheme.color,
               borderRadius: const BorderRadius.all(Radius.circular(10)),
             ),
             child: SvgPicture.asset("assets/icons/Search.svg"),

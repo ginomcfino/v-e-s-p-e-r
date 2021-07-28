@@ -13,6 +13,7 @@ class MainScreen extends StatelessWidget {
       key: context.read<MenuController>().scaffoldKey,
       drawer: SideMenu(),
       body: SafeArea(
+        bottom: false,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
