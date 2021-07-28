@@ -6,6 +6,7 @@ import 'package:vesper/Pages/chatPage.dart';
 import 'package:vesper/Pages/dashboard.dart';
 import 'package:vesper/Pages/personalAccount.dart';
 import 'package:vesper/Pages/randomWords.dart';
+import 'package:vesper/Pages/welcome/welcomePage.dart';
 import 'package:vesper/main.dart';
 
 class Navigation extends StatelessWidget {
@@ -84,7 +85,7 @@ class Navigation extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Hmmm(),
+                  builder: (context) => WelcomeScreen(),
                 ),
               );
             },
