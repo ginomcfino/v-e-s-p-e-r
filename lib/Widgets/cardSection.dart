@@ -46,7 +46,7 @@ class CardSection extends StatelessWidget {
                           decoration: BoxDecoration(
                             boxShadow: customShadow,
                             shape: BoxShape.circle,
-                            color: Colors.white38, //TODO: color
+                            color: Colors.lightBlueAccent, //TODO: color
                           ),
                         ),
                       ),

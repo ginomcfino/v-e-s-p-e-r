@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vesper/Controllers/navigationMenu.dart';
 import 'package:vesper/design/constants.dart';
+import 'package:vesper/Pages/welcome/signUPorIN.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -17,6 +18,7 @@ class WelcomeScreen extends StatelessWidget {
         appBar: AppBar(
           elevation: 0,
           title: Text("Welcome to Vesper!"),
+          textTheme: Theme.of(context).textTheme,
           backgroundColor: Colors.transparent,
         ),
         drawer: Navigation(),
@@ -57,11 +59,16 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   FittedBox(
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Login(),
+                        ),
+                      ),
                       child: Row(
                         children: [
                           Text(
-                            "skip",
+                            "continue",
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyText1!

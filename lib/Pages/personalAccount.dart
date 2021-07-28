@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vesper/Controllers/navigationMenu.dart';
 import 'package:vesper/Widgets/signalStatSection.dart';
-import 'package:vesper/design/constants.dart';
 import 'package:vesper/Widgets/cardSection.dart';
 import 'package:vesper/Widgets/walletHeader.dart';
 
@@ -12,15 +11,14 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: primaryColor,
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text(
-          'My Profile',
-          style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+          'V-E-S-P-E-R',
+          style: TextStyle(color: Theme.of(context).buttonColor),
         ),
-        foregroundColor: Colors.black,
         elevation: 0,
       ),
-      backgroundColor: primaryColor,
+      backgroundColor: Theme.of(context).canvasColor,
       drawer: Navigation(),
       body: Stack(children: [
         Column(
