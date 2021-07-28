@@ -18,7 +18,8 @@ class Navigation extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
+            decoration:
+                BoxDecoration(color: Theme.of(context).colorScheme.primary),
             child: Text('V E S P E R'),
           ),
           ListTile(

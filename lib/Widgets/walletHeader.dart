@@ -27,7 +27,8 @@ class WalletHeader extends StatelessWidget {
                 Center(
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.deepOrange, shape: BoxShape.circle),
+                        color: Theme.of(context).colorScheme.primary,
+                        shape: BoxShape.circle),
                   ),
                 ),
                 Center(
@@ -37,7 +38,12 @@ class WalletHeader extends StatelessWidget {
                         color: primaryColor, shape: BoxShape.circle),
                   ),
                 ),
-                Center(child: Icon(Icons.add_alarm_rounded)) //TODO: modify this
+                Center(
+                  child: Icon(
+                    Icons.add_alarm_rounded,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                )
               ],
             ),
           ),

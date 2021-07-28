@@ -12,6 +12,7 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      bottom: false,
       child: SingleChildScrollView(
         padding: EdgeInsets.all(defaultPadding),
         child: Column(

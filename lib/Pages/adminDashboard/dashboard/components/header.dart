@@ -48,7 +48,7 @@ class ProfileCard extends StatelessWidget {
         vertical: defaultPadding / 2,
       ),
       decoration: BoxDecoration(
-        color: cardBgColor.withOpacity(.5),
+        color: Theme.of(context).cardColor.withOpacity(.5),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         //border: Border.all(color: Colors.white10),
       ),
@@ -81,7 +81,7 @@ class SearchField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: "Search",
-        fillColor: cardBgColor.withOpacity(.3),
+        fillColor: Theme.of(context).cardColor.withOpacity(.3),
         filled: true,
         border: OutlineInputBorder(
           borderSide: BorderSide.none,

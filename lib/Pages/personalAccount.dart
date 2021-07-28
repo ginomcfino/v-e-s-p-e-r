@@ -15,7 +15,7 @@ class AccountPage extends StatelessWidget {
         backgroundColor: primaryColor,
         title: Text(
           'My Profile',
-          style: TextStyle(color: Colors.deepOrange),
+          style: TextStyle(color: Theme.of(context).colorScheme.secondary),
         ),
         foregroundColor: Colors.black,
         elevation: 0,

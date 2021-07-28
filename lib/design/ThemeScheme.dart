@@ -5,9 +5,10 @@ import 'package:flutter/material.dart';
 ThemeData lightThemeData(BuildContext context) {
   return ThemeData.light().copyWith(
     primaryColor: kPrimaryColor,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: kPrimaryColor,
     appBarTheme: appBarTheme,
-    iconTheme: IconThemeData(color: kContentColorLightTheme),
+    cardColor: cardBgColorLight,
+    iconTheme: IconThemeData(color: kSecondaryColor),
     textTheme: ThemeData(fontFamily: 'Circular')
         .textTheme
         .apply(bodyColor: kContentColorLightTheme),
@@ -25,6 +26,7 @@ ThemeData darkThemeData(BuildContext context) {
     accentColor: Colors.amberAccent,
     scaffoldBackgroundColor: Colors.black.withOpacity(.7),
     appBarTheme: appBarTheme,
+    cardColor: cardBgColorDark,
     iconTheme: IconThemeData(color: Colors.purpleAccent),
     textTheme: ThemeData(fontFamily: 'Circular')
         .textTheme

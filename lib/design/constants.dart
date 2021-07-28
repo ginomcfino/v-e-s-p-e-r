@@ -4,15 +4,17 @@ import 'package:flutter/material.dart';
 Color primaryColor = Color(0xFFCADCED);
 Color secondaryColor = Colors.yellowAccent.withOpacity(0.3);
 Color bgColor = Colors.blue.shade900.withOpacity(.2);
-const cardBgColor = Colors.deepPurple;
+
+const cardBgColorLight = Colors.greenAccent;
+const cardBgColorDark = Colors.deepOrange;
 
 const defaultPadding = 20.0;
 
-const kPrimaryColor = Color(0xFF18B66C);
-const kSecondaryColor = Color(0xFF0096FA);
+const kPrimaryColor = Color(0xFF27915F);
+const kSecondaryColor = Color(0xFFFAA200);
 const kContentColorLightTheme = Color(0xFF2C1D35);
 const kContentColorDarkTheme = Color(0xFFC4E69F);
-const kWarninngColor = Color(0xFFF3BB1C);
+const kWarninngColor = Color(0xFFE11CF3);
 const kErrorColor = Color(0xFFF03738);
 
 const kDefaultPadding = 20.0;

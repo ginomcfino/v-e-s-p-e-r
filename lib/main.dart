@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Vesper - trading made easy",
       theme: lightThemeData(context),
-      //theme: ThemeData(fontFamily: 'Circular'),
+      darkTheme: darkThemeData(context),
+      themeMode: ThemeMode.system,
       home: ProviderScreen(),
       //home: AccountPage(),
     );
