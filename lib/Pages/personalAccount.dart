@@ -21,23 +21,21 @@ class AccountPage extends StatelessWidget {
       ),
       backgroundColor: Theme.of(context).canvasColor,
       drawer: Navigation(),
-      body: Stack(children: [
-        Column(
-          children: <Widget>[
-            //SizedBox(height: 20),
-            Container(
-              margin: EdgeInsets.only(top: 10),
-              child: WalletHeader(),
-            ),
-            Expanded(
-              child: CardSection(),
-            ),
-            Expanded(
-              child: StatDisplay(),
-            )
-          ],
-        ),
-      ]),
+      body: Column(
+        children: <Widget>[
+          //SizedBox(height: 20),
+          Container(
+            margin: EdgeInsets.only(top: 13),
+            child: WalletHeader(),
+          ),
+          Expanded(
+            child: CardSection(),
+          ),
+          Expanded(
+            child: StatDisplay(),
+          )
+        ],
+      ),
     );
   }
 }

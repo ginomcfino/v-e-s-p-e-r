@@ -14,9 +14,13 @@ class SideMenu extends StatelessWidget {
         padding: EdgeInsets.only(top: 0.0),
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(color: Colors.lightGreenAccent[100]),
+            decoration: BoxDecoration(color: Theme.of(context).primaryColor),
             child: Container(
-              child: Center(child: Image.asset("assets/images/logo.png")),
+              child: Center(
+                child: Text("VESPER",
+                    style: Theme.of(context).textTheme.headline3!.copyWith(
+                        color: Theme.of(context).colorScheme.secondary)),
+              ),
             ),
           ),
           DrawerListTile(
@@ -87,12 +91,12 @@ class DrawerListTile extends StatelessWidget {
       horizontalTitleGap: 0.0,
       leading: SvgPicture.asset(
         svgSrc,
-        color: Colors.orangeAccent[700],
+        color: Theme.of(context).accentColor,
         height: 16,
       ),
       title: Text(
         title,
-        style: TextStyle(color: Colors.indigo[700]),
+        style: TextStyle(color: Theme.of(context).accentColor),
       ),
     );
   }

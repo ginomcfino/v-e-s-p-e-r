@@ -14,7 +14,12 @@ class ChatScreen extends StatelessWidget {
           IconButton(onPressed: () {}, icon: Icon(Icons.search_rounded))
         ],
       ),
-      body: ChatPBody(),
+      backgroundColor: Theme.of(context).backgroundColor,
+      body: ListView(
+        children: [
+          ChatPBody(),
+        ],
+      ),
     );
   }
 }
