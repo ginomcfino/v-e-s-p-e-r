@@ -23,53 +23,84 @@ class CardSection extends StatelessWidget {
               physics: PageScrollPhysics(),
               itemBuilder: (context, i) {
                 //MasterCard Container Widget
-                return Container(
-                  width: MediaQuery.of(context).size.width - 30,
-                  decoration: BoxDecoration(
-                    color: primaryColor,
-                    boxShadow: customShadow,
-                    borderRadius: BorderRadius.circular(20),
-                    // border: Border.all(
-                    //   width: 3,
-                    //   color: Colors.green,
-                    //   style: BorderStyle.solid,
+                return Stack(
+                  children: [
+                    // Positioned.fill(
+                    //   left: -1 * (MediaQuery.of(context).size.width),
+                    //   top: -100,
+                    //   bottom: -100,
+                    //   child: Container(
+                    //     decoration: BoxDecoration(
+                    //       boxShadow: customShadow,
+                    //       shape: BoxShape.circle,
+                    //       color: Theme.of(context)
+                    //           .colorScheme
+                    //           .secondary, //TODO: color
+                    //     ),
+                    //   ),
                     // ),
-                  ),
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 30),
-                  child: Stack(
-                    children: <Widget>[
-                      //Bottom Half-Circle
-                      Positioned.fill(
-                        top: 150,
-                        bottom: -200,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            boxShadow: customShadow,
-                            shape: BoxShape.circle,
-                            color: Colors.lightBlueAccent, //TODO: color
-                          ),
-                        ),
+                    Container(
+                      width: MediaQuery.of(context).size.width - 30,
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).buttonColor,
+                        boxShadow: customShadow,
+                        borderRadius: BorderRadius.circular(20),
+                        // border: Border.all(
+                        //   width: 5,
+                        //   color: Theme.of(context).buttonColor,
+                        //   style: BorderStyle.solid,
+                        // ),
                       ),
-                      //Left Half-Circle
-                      Positioned.fill(
-                        left: -1 * (MediaQuery.of(context).size.width),
-                        top: -100,
-                        bottom: -100,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            boxShadow: customShadow,
-                            shape: BoxShape.circle,
-                            color: Colors.white30, //TODO: color
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 30),
+                      child: Stack(
+                        children: <Widget>[
+                          //Bottom Half-Circle
+                          Positioned.fill(
+                            top: 150,
+                            bottom: -200,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                boxShadow: customShadow,
+                                shape: BoxShape.circle,
+                                color:
+                                    Theme.of(context).cardColor, //TODO: color
+                              ),
+                            ),
                           ),
-                        ),
+                          //Left Half-Circle
+                          Positioned.fill(
+                            left: -1 * (MediaQuery.of(context).size.width),
+                            top: -100,
+                            bottom: -100,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                boxShadow: customShadow,
+                                shape: BoxShape.circle,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .secondary, //TODO: color
+                              ),
+                            ),
+                          ),
+                          CardDetails() //TODO: make dynamic
+                        ],
                       ),
-                      CardDetails() //TODO: make dynamic
-                    ],
-                  ),
+                    ),
+                  ],
                 );
               }),
         ),
       ],
     );
+  }
+}
+
+class NewCardSection extends StatelessWidget {
+  const NewCardSection({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

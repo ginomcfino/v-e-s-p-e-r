@@ -4,7 +4,7 @@ import 'package:vesper/design/constants.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
-    required Key key,
+    Key? key,
     required this.text,
     required this.press,
     this.color = kPrimaryColor,
@@ -18,17 +18,23 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(40)),
-      ),
-      padding: padding,
-      color: color,
-      minWidth: double.infinity,
-      onPressed: press,
-      child: Text(
-        text,
-        style: TextStyle(color: Colors.white),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(boxShadow: customShadow),
+        child: MaterialButton(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(40)),
+          ),
+          padding: padding,
+          color: color,
+          minWidth: double.infinity,
+          onPressed: press,
+          child: Text(
+            text,
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
       ),
     );
   }

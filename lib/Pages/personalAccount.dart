@@ -11,10 +11,11 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
+        iconTheme: IconTheme.of(context).copyWith(color: Colors.black),
+        backgroundColor: Theme.of(context).canvasColor,
         title: Text(
           'V-E-S-P-E-R',
-          style: TextStyle(color: Theme.of(context).buttonColor),
+          style: TextStyle(color: Theme.of(context).accentColor),
         ),
         elevation: 0,
       ),
