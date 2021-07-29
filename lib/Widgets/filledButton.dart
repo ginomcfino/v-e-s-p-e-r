@@ -4,7 +4,7 @@ import 'package:vesper/design/constants.dart';
 
 class FillOutlineButton extends StatelessWidget {
   const FillOutlineButton({
-    required Key key,
+    Key? key,
     this.isFilled = true,
     required this.press,
     required this.text,

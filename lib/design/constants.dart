@@ -31,14 +31,14 @@ List pieColors = [
 List<BoxShadow> customShadow = [
   BoxShadow(
     // color: Colors.white.withOpacity(0.5),
-    color: ThemeData.light().backgroundColor,
+    color: ThemeData.light().backgroundColor.withOpacity(.4),
     spreadRadius: 4,
     offset: Offset(-2, -2),
-    blurRadius: 15,
+    blurRadius: 10,
   ),
   BoxShadow(
     // color: Colors.blue.shade900.withOpacity(.2),
-    color: ThemeData.light().shadowColor,
+    color: ThemeData.light().shadowColor.withOpacity(.3),
     spreadRadius: 4,
     offset: Offset(6, 6),
     blurRadius: 10,
