@@ -14,11 +14,12 @@ class CardDetails extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 width: MediaQuery.of(context).size.width / 2,
-                child: Image.asset('assets/images/mastercardlogo.png'),
+                // child: Icon(Icons.alarm),
+                // child: Image.asset('assets/images/mastercardlogo.png'),
               ),
             )),
         Align(
-          alignment: Alignment.bottomRight,
+          alignment: Alignment.bottomLeft,
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(

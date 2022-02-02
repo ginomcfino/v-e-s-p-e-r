@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vesper/Pages/adminDashboard/main/main_screen.dart';
 import 'package:vesper/design/ThemeScheme.dart';
-// import 'Pages/personalAccount.dart';
+import 'Pages/personalAccount.dart';
 import 'controllers/menuController.dart';
 
 void main() => runApp(MyApp());
@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Vesper - trading made easy",
       theme: lightThemeData(context),
-      darkTheme: darkThemeData(context),
       themeMode: ThemeMode.system,
       home: ProviderScreen(),
       //home: AccountPage(),
