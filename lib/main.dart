@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Vesper - trading made easy",
-      theme: lightThemeData(context),
+      theme: darkThemeData(context),
       themeMode: ThemeMode.system,
-      home: ProviderScreen(),
-      //home: AccountPage(),
+      //home: ProviderScreen(),
+      home: AccountPage(),
     );
   }
 }
