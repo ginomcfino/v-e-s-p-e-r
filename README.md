@@ -1,10 +1,10 @@
 # vesper
 
-A new Flutter project.
+Development Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is my starting point for making InVesper
 
 A few resources to get you started if this is your first Flutter project:
 
